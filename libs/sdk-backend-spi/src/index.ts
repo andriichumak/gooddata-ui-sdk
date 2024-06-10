@@ -143,6 +143,8 @@ export { IWorkspacePermissionsService } from "./workspace/permissions/index.js";
 
 export { IWorkspaceAttributesService } from "./workspace/attributes/index.js";
 
+export { IWorkspaceGenAIService } from "./workspace/genAI/index.js";
+
 export {
     IWorkspaceMeasuresService,
     IMeasureReferencing,

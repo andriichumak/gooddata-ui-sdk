@@ -891,3 +891,5 @@ export {
 } from "./exportDefinitions/index.js";
 
 export { IWorkspaceDataFilter, IWorkspaceDataFilterSetting } from "./dataFilter/index.js";
+
+export { IWorkspaceGenAISearchResultObject, WorkspaceGenAISearchObjectType } from "./genAI/index.js";

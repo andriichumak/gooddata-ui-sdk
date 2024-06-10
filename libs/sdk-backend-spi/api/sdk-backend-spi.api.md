@@ -91,6 +91,7 @@ import { IWidgetAlert } from '@gooddata/sdk-model';
 import { IWidgetAlertDefinition } from '@gooddata/sdk-model';
 import { IWidgetDefinition } from '@gooddata/sdk-model';
 import { IWorkspaceDataFilter } from '@gooddata/sdk-model';
+import { IWorkspaceGenAISearchResultObject } from '@gooddata/sdk-model';
 import { IWorkspacePermissionAssignment } from '@gooddata/sdk-model';
 import { IWorkspacePermissions } from '@gooddata/sdk-model';
 import { IWorkspaceUser } from '@gooddata/sdk-model';
@@ -99,6 +100,7 @@ import { ObjectType } from '@gooddata/sdk-model';
 import { ObjRef } from '@gooddata/sdk-model';
 import { OrganizationPermissionAssignment } from '@gooddata/sdk-model';
 import { SortDirection } from '@gooddata/sdk-model';
+import { WorkspaceGenAISearchObjectType } from '@gooddata/sdk-model';
 
 // @public
 export abstract class AnalyticalBackendError extends Error {
@@ -217,6 +219,8 @@ export interface IAnalyticalWorkspace {
     // @alpha
     exportDefinitions(): IWorkspaceExportDefinitionsService;
     facts(): IWorkspaceFactsService;
+    // @alpha
+    genAI(): IWorkspaceGenAIService;
     getDescriptor(includeParentPrefixes?: boolean): Promise<IWorkspaceDescriptor>;
     getParentWorkspace(): Promise<IAnalyticalWorkspace | undefined>;
     insights(): IWorkspaceInsightsService;
@@ -1211,6 +1215,12 @@ export interface IWorkspaceExportDefinitionsService {
 // @public
 export interface IWorkspaceFactsService {
     getFactDatasetMeta(ref: ObjRef): Promise<IMetadataObject>;
+}
+
+// @alpha
+export interface IWorkspaceGenAIService {
+    search(query: string, deepSearch: boolean, objectTypes: WorkspaceGenAISearchObjectType[]): Promise<IWorkspaceGenAISearchResultObject[]>;
+    syncMetadata(): Promise<void>;
 }
 
 // @public

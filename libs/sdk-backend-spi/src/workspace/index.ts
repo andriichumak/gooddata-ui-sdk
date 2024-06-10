@@ -19,6 +19,7 @@ import { IAttributeHierarchiesService } from "./attributeHierarchies/index.js";
 import { IWorkspaceExportDefinitionsService } from "./exportDefinitions/index.js";
 import { IDataFiltersService } from "./dataFilter/index.js";
 import { IWorkspaceLogicalModelService } from "./ldm/model.js";
+import { IWorkspaceGenAIService } from "./genAI/index.js";
 
 /**
  * Represents an analytical workspace hosted on a backend.
@@ -153,6 +154,12 @@ export interface IAnalyticalWorkspace {
      * @internal
      */
     logicalModel(): IWorkspaceLogicalModelService;
+
+    /**
+     * Returns service that operates over AI features.
+     * @alpha
+     */
+    genAI(): IWorkspaceGenAIService;
 }
 
 /**

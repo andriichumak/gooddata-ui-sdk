@@ -193,6 +193,11 @@ export {
     ActionsApiAnomalyDetectionRequest,
     ActionsApiAnomalyDetectionResultRequest,
     AnomalyDetectionResult,
+    SearchRequest,
+    SearchResult,
+    ActionsApiAiSearchRequest,
+    SearchRequestObjectTypesEnum,
+    SearchResultObject,
 } from "./generated/afm-rest-api/api.js";
 export {
     ActionsApiFactory as AuthActionsApiFactory,

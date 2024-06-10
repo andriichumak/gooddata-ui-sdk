@@ -3419,6 +3419,18 @@ export interface IWorkspaceDataFilterSetting {
 }
 
 // @alpha
+export interface IWorkspaceGenAISearchResultObject {
+    // (undocumented)
+    description: string;
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    title: string;
+    // (undocumented)
+    type: WorkspaceGenAISearchObjectType;
+}
+
+// @alpha
 export interface IWorkspacePermissionAssignment {
     // (undocumented)
     assigneeIdentifier: IOrganizationAssignee;
@@ -3921,6 +3933,9 @@ export function widgetUri(widget: IWidget): string;
 
 // @public
 export type WorkspaceAccessPermission = "VIEW" | "VIEW_AND_EXPORT" | "ANALYZE" | "ANALYZE_AND_EXPORT" | "MANAGE";
+
+// @alpha (undocumented)
+export type WorkspaceGenAISearchObjectType = "attribute" | "metric" | "fact" | "label" | "date" | "dataset" | "visualization" | "dashboard";
 
 // @public
 export type WorkspacePermission =

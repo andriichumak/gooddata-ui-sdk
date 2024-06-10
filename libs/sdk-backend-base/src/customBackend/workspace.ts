@@ -23,6 +23,7 @@ import {
     IWorkspaceExportDefinitionsService,
     IDataFiltersService,
     IWorkspaceLogicalModelService,
+    IWorkspaceGenAIService,
 } from "@gooddata/sdk-backend-spi";
 import { CustomExecutionFactory } from "./execution.js";
 import { CustomBackendConfig, CustomBackendState } from "./config.js";
@@ -133,5 +134,9 @@ export class CustomWorkspace implements IAnalyticalWorkspace {
 
     public logicalModel(): IWorkspaceLogicalModelService {
         throw new NotSupported("logical model is not supported");
+    }
+
+    public genAI(): IWorkspaceGenAIService {
+        throw new NotSupported("ai is not supported");
     }
 }
