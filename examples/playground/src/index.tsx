@@ -3,6 +3,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { provideCreateRoot } from "@gooddata/sdk-ui-ext";
 
+import "./index.css";
 import "@gooddata/sdk-ui-filters/styles/scss/main.scss";
 import "@gooddata/sdk-ui-charts/styles/scss/main.scss";
 import "@gooddata/sdk-ui-geo/styles/scss/main.scss";

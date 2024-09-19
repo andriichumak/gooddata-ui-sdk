@@ -1,7 +1,7 @@
 // (C) 2019-2024 GoodData Corporation
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
-import mkcert from "vite-plugin-mkcert";
+// import mkcert from "vite-plugin-mkcert";
 import path from "path";
 
 const packagesWithoutStyles = [
@@ -48,7 +48,7 @@ export default defineConfig(({ mode }) => {
     const backendUrl = env.VITE_BACKEND_URL ?? "https://staging.dev-latest.stg11.panther.intgdc.com";
 
     return {
-        plugins: [react(), mkcert()],
+        plugins: [react()],
         optimizeDeps: {
             exclude: [...packagesWithoutStyles, ...packagesWithStyles],
         },
